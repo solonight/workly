@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="worklyHome.css">
+</head>
+<body class="bg-[#E6D5B8]">
+    <nav class=" sticky top-0 z-50 bg-[#483C32] shadow-md px-4 sm:px8 py-4">
+<div class="flex justify-between items-center max-w-7xl mx-auto">
+    <a href="worklyHome.html" class="text-2xl text-[#E2725B] font-bold">Workly</a>
+    <!--desk top menu-->
+    <div class="hidden md:flex items-centre space-x-8">
+        <a href="worklyHome.html" class="font-semibold text-[#E2725B] hover:text-primary relative group">Home
+            <span class="absolute bottom-0 left-0 h-0 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="worklygallary.html" class="font-semibold text-[#E2725B] hover:text-primary relative group">Gallery
+            <span class="absolute bottom-0 left-0 h-0 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="worklyoffres.html" class="font-semibold text-[#E2725B] hover:text-primary relative group">Offers
+            <span class="absolute bottom-0 left-0 h-0 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="worklycontact.html" class="font-semibold text-[#E2725B] hover:text-primary relative group">Contact
+            <span class="absolute bottom-0 left-0 h-0 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="worklyabout.html" class="font-semibold text-[#E2725B] hover:text-primary relative group">Plus 
+            <span class="absolute bottom-0 left-0 h-0 bg-primary w-0 group-hover:w-full transition-all duration-300"></span>
+        </a>
+       
+    </div>
+<!-- mobile botton-->
+  <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none">☰</button>
+  </div>
+   <!--mobile menu-->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#483C32] py-4 px-6 shadow-lg">
+   <a href="worklyHome.html" class="block py-2 font-semibold text-[#E2725B] hover:text-primary">Home</a>
+   <a href="worklygallary.html" class="block py-2 font-semibold text-[#E2725B] hover:text-primary">Gallery</a>
+   <a href="worklyoffres.html" class="block py-2 font-semibold text-[#E2725B] hover:text-primary">Offers</a>
+   <a href="worklycontact.html" class="block py-2 font-semibold text-[#E2725B] hover:text-primary">Contact</a>
+  </div>
+  </nav>
+  <!-- Titre et description -->
+<div class="flex flex-col items-center px-4 text-center mt-3 md:mt-7 shadow-lg">
+    <h1 class="text-[#483C32] font-serif text-3xl md:text-5xl mb-4 duration-500 ease-in-out">Gallery</h1>
+  <p class="text-[#483C32] font-serif text-lg md:text-2xl max-w-2xl duration-500 ease-in-out">
+    Notre environnement allie design minimaliste et fonctionnalité optimale.
+  </p>
+</div>
+
+<!-- Galerie -->
+<div class="gallery flex items-center justify-center gap-4 flex-wrap md:flex-nowrap px-4 h-screen">
+  <button class="text-3xl md:text-5xl text-[#483C32]" id="prev">⟨</button>
+
+  <img
+    id="galleryImage"
+    src="worklyimags/i5.png"
+    alt="Image 1"
+    class="w-77 h-77 md:w-111 md:h-111 rounded-full shadow-lg object-cover transition duration-500 ease-in-out"
+  />
+
+  <button class="text-3xl md:text-5xl text-[#483C32]" id="next">⟩</button>
+</div>
+
+
+  <script>
+    const images = ["worklyimags/i2.png", "worklyimags/i3.png", "worklyimags/i4.png","worklyimags/i5.png","worklyimags/i7.png"]; // ajoute ici les noms de tes images
+let index = 0;
+
+const imageElement = document.getElementById("galleryImage");
+const nextButton = document.getElementById("next");
+const prevButton = document.getElementById("prev");
+
+nextButton.addEventListener("click", () => {
+  index = (index + 1) % images.length;
+  imageElement.src = images[index];
+});
+
+prevButton.addEventListener("click", () => {
+  index = (index - 1 + images.length) % images.length;
+  imageElement.src = images[index];
+});
+
+  </script>
+
+ <footer class="bg-[#483C32] flex justify-center items-center">
+               <p class="text-[#E2725B]">Simplon academy</p>
+ </footer>
+ 
+
+
+
+
+  <script>
+        
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>  
+</body>
+</html>
