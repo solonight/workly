@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>worklycontact</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="worklyHome.css">
+    <link rel="stylesheet" href="contactpopup.css">
+    
 </head>
 <body class="bg-[#E6D5B8]">
+  <script src="popup.js"></script>
   <div class="site">
     <nav class=" sticky top-0 z-50 bg-[#483C32] shadow-md px-4 sm:px8 py-4">
 <div class="flex justify-between items-center max-w-7xl mx-auto">
@@ -50,11 +52,16 @@
     répondre à toutes vos questions
   </p>
 </div>
+<div class="centre bg-[#483C32] rounded-full flex justify-center ">
+  <button class="text-2xl font-serif text-[#E2725B]  flex " id="Contactez">Contact-nous</button>
+</div>
 
 <!-- Formulaire -->
-<div class="max-w-md w-full mx-auto px-4 md:px-8 py-6 md:py-8 mt-7 mb-7 border-2 border-[#483C32] rounded-lg shadow-xl">
-  <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-[#483C32] duration-500 ease-in-out">Contactez-nous</h2>
 
+<div class="popup max-w-md w-full mx-auto px-4 md:px-8 py-6 md:py-8 mt-7 mb-7 border-2 border-[#483C32] rounded-lg shadow-xl">
+   <div class="close-btn bg-[#E2725B] rounded-full">&times;</div>
+  <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-[#483C32] duration-500 ease-in-out">Contactez-nous</h2>
+ <div class='form'>
   <form>
     <div class="mb-4">
       <label for="nom" class="block text-base md:text-2xl text-[#483C32] font-serif mb-2">Nom</label>
@@ -103,7 +110,9 @@
       Envoyer
     </button>
   </form>
+ </div>
 </div>
+
 
  <footer class="bg-[#483C32] flex justify-center items-center">
                <p class="text-[#E2725B]">Simplon academy</p>
@@ -115,6 +124,22 @@
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
+        // Popup functionality (new code)
+document.addEventListener('DOMContentLoaded', function() {
+    const contactBtn = document.querySelector("#Contactez");
+    const popup = document.querySelector(".popup");
+    const closeBtn = document.querySelector(".popup .close-btn");
+
+    if (contactBtn && popup && closeBtn) {
+        contactBtn.addEventListener("click", function() {
+            popup.classList.add("active");
+        });
+
+        closeBtn.addEventListener("click", function() {
+            popup.classList.remove("active");
+        });
+    }
+});
     </script>
     </div>
 </body>
