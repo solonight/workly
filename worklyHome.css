@@ -1,5 +1,6 @@
-@media only screen and (max-width: 600px) {
-  body {
-   height: 100%;
-  }
+.site {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
 }
